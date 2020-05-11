@@ -1,27 +1,26 @@
 <template>
     <div class="home">
         <div id="copy-notif">username copy to your clipboard!</div>
-        <img
-            id="avatar"
-            src="../assets/images/mohsen.jpg"
-            alt="mohsen-avatar"
-        />
 
-        <h1 id="name">Mohsen Fallahnejad</h1>
+        <img class="home__avatar" :src="mohsen.avatar" alt="mohsen-avatar" />
 
-        <h3 id="job-title">
+        <h1 class="home__name">{{ mohsen.name }}</h1>
+
+        <h3 class="home__job-title">
             Front-end,
             <a
                 id="vue-word"
+                class="link"
                 href="https://vuejs.org/"
                 target="_blank"
                 rel="noopener"
             >
                 Vue.js
-                <img src="../assets/images/vue-js.svg" alt="vuejs-logo" />
+                <img id="vuejs-logo" :src="mohsen.vueLogo" alt="vuejs-logo" />
             </a>
             | Public Relations Manager at
             <a
+                class="link"
                 id="lahzino"
                 href="https://lahzino.ir/"
                 target="_blank"
@@ -31,47 +30,58 @@
             </a>
         </h3>
 
-        <p class="description">
-            <!-- I try to gain experience and learn different skills in different
-            fields related to the field I work in. That way, both my mind goes
-            out of one-dimensionality and it makes me more creative in my work.
-            Everything in the tech world attracts me and my laptop is my best
-            friend. -->
+        <p class="home__description">
             in rel with
             <a
+                id="pwa-address"
                 href="https://web.dev/progressive-web-apps/"
                 target="_blank"
                 rel="noopener"
             >
                 <img
-                    id="pwa-logo"
-                    src="../assets/images/PWA.png"
+                    id="pwa-address__logo"
+                    :src="mohsen.pwaLogo"
                     alt="pwa-logo"
                 />
             </a>
-        </p>
-        <p id="id-text" class="description">
+            <br />
             I'm on all Social Medias<br />with:
-            <span id="username" @click="copyUsername">@mohsenfallahnjd</span>
+            <span id="username" @click="copyUsername">
+                {{ mohsen.username }}
+            </span>
         </p>
-        <div id="socials-comp"><Socials /></div>
+        <div id="socials-comp"><Socials :socialsData="socials" /></div>
         <h3 class="products-list-title">--- Products List ---</h3>
-        <div id="link-comp"><Link /></div>
+        <div id="product-comp">
+            <Product
+                v-for="(product, i) in productsList"
+                :key="i"
+                :productData="product"
+            />
+        </div>
     </div>
 </template>
 
 <script>
 import Socials from '@/components/Socials.vue'
-import Link from '@/components/Link.vue'
+import Product from '@/components/Product.vue'
+import { productsList } from '../data'
+import { mohsen } from '../data'
+import { socials } from '../data'
 export default {
     name: 'Home',
     components: {
         Socials,
-        Link,
+        Product,
     },
+    data: () => ({
+        mohsen,
+        productsList,
+        socials,
+    }),
     methods: {
         copyUsername() {
-            navigator.clipboard.writeText('@mohsenfallahnjd')
+            navigator.clipboard.writeText(this.mohsen.username)
             const notif = document.getElementById('copy-notif')
             notif.style.top = '0px'
             setTimeout(() => {
@@ -89,6 +99,7 @@ $description: #566573
 $vueColor: #41B883
 $vueColor_2: #265942
 $avatarBorder: #E8E8E8
+
 .home
   width: 100%
   height: 100%
@@ -98,66 +109,10 @@ $avatarBorder: #E8E8E8
   flex-direction: column
   justify-content: center
   align-items: center
-  text-align: center
   padding: 3em 0
-  #avatar
-    width: 135px
-    height: 135px
-    border-radius: 110px
-    user-select: none
-    object-fit: cover
-    border: 5px solid $avatarBorder
-  #name
-    margin-block-start: .5em
-    margin-block-end: .1em
-    cursor: pointer
-    user-select: none
-    &:hover
-      text-shadow: 3px 3px 5px rgba(86, 101, 115 ,.8)
-  #job-title
-    margin-block-start: 0
-    user-select: none
-    margin-block-end: 0
-    font-weight: 300
-    #vue-word
-      color: $vueColor_2
-    #lahzino
-      color: $lahzino
-    > a
-      text-decoration: none
-      &:focus
-        outline: none
-      &:hover
-        font-weight: 700
-      > img
-        height: 15px
-        object-fit: cover
-        vertical-align: middle
-  .description
-    margin: 0
-    user-select: none
-    color: $description
-    text-rendering: optimizeLegibility
-    width: 500px
-    text-align: center
-    word-spacing: 3px
-    letter-spacing: .8px
-    > a
-      color: transparent
-      text-decoration: none
-      &:focus
-        outline: none
-      #pwa-logo
-        height: 10px
-        object-fit: cover
-        &:hover
-          filter: drop-shadow(3px 3px 2px #694BA6)
-    #username
-      cursor: pointer
-      color: $vueColor_2
   #copy-notif
-    width: 69%
-    height: 50px
+    width: 30%
+    height: 40px
     position: absolute
     top: -61px
     background-color: $vueColor_2
@@ -168,20 +123,70 @@ $avatarBorder: #E8E8E8
     justify-content: center
     font-size: 20px
     border-radius: 0 0 8px 8px
+  &__avatar
+    width: 135px
+    height: 135px
+    border-radius: 110px
+    user-select: none
+    object-fit: cover
+    border: 5px solid $avatarBorder
+  &__name
+    margin: .5em .8em .1em
+    cursor: pointer
+    user-select: none
+    &:hover
+      text-shadow: 3px 3px 5px rgba(86, 101, 115 ,.8)
+  &__job-title
+    margin: 0
+    user-select: none
+    font-weight: 300
+    padding: 0 2em
+    .link
+      text-decoration: none
+      &:focus
+        outline: none
+      &:hover
+        font-weight: 700
+      #vuejs-logo
+        height: 15px
+        object-fit: cover
+        vertical-align: middle
+    #vue-word
+      color: $vueColor_2
+    #lahzino
+      color: $lahzino
+  &__description
+    width: 500px
+    margin: 0
+    user-select: none
+    color: $description
+    word-spacing: 3px
+    letter-spacing: .8px
+    #pwa-address
+      color: transparent
+      text-decoration: none
+      &:focus
+        outline: none
+      &__logo
+        height: 10px
+        object-fit: cover
+        &:hover
+          filter: drop-shadow(3px 3px 2px #694BA6)
+    #username
+      cursor: pointer
+      color: $vueColor_2
   .products-list-title
     margin-block-end: 0
   #socials-comp
     width: 50%
     margin-top: 8px
-  #link-comp
+  #product-comp
     width: 50%
     margin-top: .1em
   @media screen and (max-width: 500px)
-    #job-title ,#id-text
-      padding: 0px 3em
-    #link-comp
+    #product-comp
       width: 80%
   @media screen and (min-width: 1000px)
-    #link-comp
+    #product-comp
       width: 40%
 </style>
