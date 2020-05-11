@@ -11,6 +11,6 @@ body
   margin: 0
 #app
   font-family: 'Patrick Hand', cursive
-  width: 100vw
-  height: 100vh
+  width: 100%
+  height: 100%
 </style>
