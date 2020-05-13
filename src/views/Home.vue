@@ -183,8 +183,8 @@ $avatarBorder: #E8E8E8
   #product-comp
     width: 50%
     margin-top: .1em
-  @media screen and (max-width: 500px)
-    #product-comp
+  @media screen and (max-width: 560px)
+    #product-comp , #copy-notif
       width: 80%
   @media screen and (min-width: 1000px)
     #product-comp

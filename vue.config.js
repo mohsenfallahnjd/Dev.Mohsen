@@ -1,12 +1,14 @@
 module.exports = {
     pwa: {
         name: 'Dev: Mohsen Fallahnejad',
-        themeColor: '#FFFFFF',
-        msTileColor: '#FFFFFF',
+        themeColor: '#FAFAFA',
+        msTileColor: '#FAFAFA',
         manifestOptions: {
             short_name: 'Dev.Mohsen',
-            background_color: '#FFFFFF',
+            background_color: '#FAFAFA',
             description: 'The Web-Products List of Mohsen Fallahnejad',
+            splash_pages: null,
+            lang: 'en-US',
         },
     },
 }

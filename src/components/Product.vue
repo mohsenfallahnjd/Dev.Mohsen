@@ -16,8 +16,7 @@
                 <span> {{ productData.desc }} </span>
             </div>
             <img
-                :class="productData.pwa ? '' : 'gray-scale'"
-                id="pwa-logo"
+                :class="productData.pwa ? 'pwa-logo' : 'pwa-logo gray-scale'"
                 src="../assets/images/PWA.png"
                 alt="pwa-logo"
             />
@@ -71,13 +70,13 @@ export default {
                 margin: 0 10px
                 &:first-child
                     font-weight: 800
-        #pwa-logo
+        .pwa-logo
             height: 10px
             object-fit: cover
         .gray-scale
             filter: grayscale(100%)
             opacity: .5
-@media screen and (max-width: 700px)
+@media screen and (max-width: 750px)
     .product
         height: 60px
     .web-product
