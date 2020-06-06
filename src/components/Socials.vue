@@ -41,5 +41,5 @@ export default {
             width: 30px
             object-fit: cover
         &:hover
-            filter: drop-shadow(3px 3px 2px #694BA6)
+            filter: drop-shadow(3px 3px 2px #85929E)
 </style>

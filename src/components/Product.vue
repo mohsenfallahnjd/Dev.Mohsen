@@ -46,7 +46,7 @@ export default {
     justify-content: center
     margin: 15px 0px
     &:hover
-        filter: drop-shadow(2px 2px 5px #694BA6)
+        filter: drop-shadow(2px 2px 5px #85929E)
     .web-product
         width: 100%
         display: flex

@@ -4,6 +4,7 @@ export const mohsen = {
     avatar: require('./assets/images/mohsen.jpg'),
     vueLogo: require('./assets/images/vue-js.svg'),
     pwaLogo: require('./assets/images/PWA.png'),
+    heartIcon: require('./assets/images/heart.png'),
 }
 
 export const socials = [{
@@ -23,6 +24,11 @@ export const socials = [{
         link: 'https://github.com/mohsenfallahnjd',
     },
     {
+        name: 'gitlab',
+        img: require('./assets/images/gitlab.svg'),
+        link: 'https://gitlab.com/mohsenfallahnjd',
+    },
+    {
         name: 'linkedin',
         img: require('./assets/images/linkedin.svg'),
         link: 'https://linkedin.com/in/mohsenfallahnjd',
@@ -36,6 +42,26 @@ export const socials = [{
         name: 'spotify',
         img: require('./assets/images/spotify.svg'),
         link: 'https://open.spotify.com/user/72viqlcr5pqgmnmjtqh8w5980?si=n_n--xPIQv2Ga8epY9Wjfw',
+    },
+    {
+        name: 'steam',
+        img: require('./assets/images/steam.svg'),
+        link: 'https://steamcommunity.com/id/mohsenfallah/',
+    },
+    {
+        name: 'swarm',
+        img: require('./assets/images/swarm.svg'),
+        link: 'https://foursquare.com/mohsenfallahnjd',
+    },
+    // {
+    //     name: 'tvtime',
+    //     img: require('./assets/images/tvtime.png'),
+    //     link: 'https://tvtime.com/r/1nFBy',
+    // },
+    {
+        name: 'twitch',
+        img: require('./assets/images/twitch.svg'),
+        link: 'https://twitch.tv/mohsenfallahnjd',
     },
     {
         name: 'instagram',
@@ -63,12 +89,24 @@ export const socials = [{
         link: 'https://www.facebook.com/mohsenfallahnjd',
     },
     {
+        name: 'skype',
+        img: require('./assets/images/skype.svg'),
+        link: 'skype:samcharly11?chat',
+    },
+    {
         name: 'email',
         img: require('./assets/images/email.png'),
         link: 'mailto:mohsenfallahnjd@gmail.com',
     },
 ]
 export const productsList = [{
+        name: 'OurTube',
+        img: require('./assets/images/webLogo/ourtube.svg'),
+        desc: 'The Live Stream Platform',
+        href: 'https://tv.guilandev.ir/',
+        pwa: true,
+    },
+    {
         name: 'Coronavirus Tracker',
         img: require('./assets/images/webLogo/covid.svg'),
         desc: 'The Progressive Coronavirus Tracker',

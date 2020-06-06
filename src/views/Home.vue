@@ -31,7 +31,12 @@
         </h3>
 
         <p class="home__description">
-            in rel with
+            in
+            <span id="rel-word">
+                rel
+            </span>
+            <img id="heart-icon" :src="mohsen.heartIcon" alt="heart-icon" />
+            with
             <a
                 id="pwa-address"
                 href="https://web.dev/progressive-web-apps/"
@@ -113,7 +118,7 @@ $avatarBorder: #E8E8E8
   #copy-notif
     width: 30%
     height: 40px
-    position: absolute
+    position: fixed
     top: -61px
     background-color: $vueColor_2
     color: #fafafa
@@ -162,6 +167,11 @@ $avatarBorder: #E8E8E8
     color: $description
     word-spacing: 3px
     letter-spacing: .8px
+    #rel-word
+      color: #C70039
+    #heart-icon
+      height: 12px
+      object-fit: cover
     #pwa-address
       color: transparent
       text-decoration: none
@@ -171,7 +181,7 @@ $avatarBorder: #E8E8E8
         height: 10px
         object-fit: cover
         &:hover
-          filter: drop-shadow(3px 3px 2px #694BA6)
+          filter: drop-shadow(3px 3px 2px #85929E)
     #username
       cursor: pointer
       color: $vueColor_2
