@@ -5,6 +5,7 @@ export const mohsen = {
     vueLogo: require('./assets/images/vue-js.svg'),
     pwaLogo: require('./assets/images/PWA.png'),
     heartIcon: require('./assets/images/heart.png'),
+    yasnaTeam: require('./assets/images/yasna-logo.png'),
 }
 
 export const socials = [{
@@ -53,11 +54,11 @@ export const socials = [{
         img: require('./assets/images/swarm.svg'),
         link: 'https://foursquare.com/mohsenfallahnjd',
     },
-    // {
-    //     name: 'tvtime',
-    //     img: require('./assets/images/tvtime.png'),
-    //     link: 'https://tvtime.com/r/1nFBy',
-    // },
+    {
+        name: 'tvtime',
+        img: require('./assets/images/tvtime.png'),
+        link: 'https://tvtime.com/r/1nFBy',
+    },
     {
         name: 'twitch',
         img: require('./assets/images/twitch.svg'),

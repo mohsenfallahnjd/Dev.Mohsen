@@ -6,6 +6,19 @@
 
         <h1 class="home__name">{{ mohsen.name }}</h1>
 
+        <h3 class="home__current-position">
+          <span> Current Position: </span>
+             Frontend Developer at 
+          <a
+              id="YasnaTeam-word"
+              class="link"
+              href="https://Yasna.Team"
+              target="_blank"
+              rel="noopener" >
+              YasnaTeam
+              <img id="YasnaTeam-logo" :src="mohsen.yasnaTeam" alt="YasnaTeam-logo" />
+          </a>
+        </h3>
         <h3 class="home__job-title">
             Front-end,
             <a
@@ -18,7 +31,8 @@
                 Vue.js
                 <img id="vuejs-logo" :src="mohsen.vueLogo" alt="vuejs-logo" />
             </a>
-            | Public Relations Manager at
+            | 
+            Public Relations Manager at
             <a
                 class="link"
                 id="lahzino"
@@ -104,6 +118,7 @@ $description: #566573
 $vueColor: #41B883
 $vueColor_2: #265942
 $avatarBorder: #E8E8E8
+$YasnaTeam: #F6C234
 
 .home
   width: 100%
@@ -141,6 +156,25 @@ $avatarBorder: #E8E8E8
     user-select: none
     &:hover
       text-shadow: 3px 3px 5px rgba(86, 101, 115 ,.8)
+  &__current-position
+    margin: 0
+    user-select: none
+    font-weight: 300
+    padding: 0 2em
+    > span
+    .link
+      text-decoration: none
+      &:focus
+        outline: none
+      &:hover
+        font-weight: 700
+    #YasnaTeam-logo
+      margin-left: 10px
+      height: 30px
+      object-fit: cover
+      vertical-align: middle
+    #YasnaTeam-word
+      color: $YasnaTeam
   &__job-title
     margin: 0
     user-select: none
